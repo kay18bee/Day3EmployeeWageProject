@@ -15,10 +15,12 @@ public class EmployeeWageUC6 {
 		int total_wage=0;
 		int total_hours=0;
 		int days;
-		for (days = 1; days<=max_days; days++) {
-					
+		for (days = 1; days<=max_days; days++) 
+		{
+		if(total_hours<=max_hours)	
+		{	
 		Random r = new Random();
-		int emp_type = r.nextInt(3); 
+		int emp_type = r.nextInt(2); 
 		switch (emp_type) {
 		case full_time: 
 			           total_hours=total_hours+8;	 
@@ -31,14 +33,16 @@ public class EmployeeWageUC6 {
 		
 		}	
 					
-	    if(total_hours<=max_hours)  {
 		emp_wage= Emp_Rate*total_hours;
-	    total_wage= total_wage + emp_wage;
-	    System.out.println("Total monthly wage is: "+total_wage);
-	    }else {
-	    System.out.println("total hours exceed 100 hours.");
-	    }
+		total_wage= total_wage + emp_wage;
+		
 		}
+		
+		}
+	    
+	    System.out.println("Total monthly wage is: "+total_wage);
+
+		
 		
 	}
 
